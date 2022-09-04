@@ -4,7 +4,6 @@ services:
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
-    network_mode: host
     environment:
       - PUID=1001
       - PGID=1001
@@ -14,4 +13,6 @@ services:
     volumes:
       - /home/${DOCKER_USER}/docker/plex/config:/config
       - /home/${DOCKER_USER}/qbittorrentDownloads:/qbittorrentDownloads
+     ports:
+      - 32400:32400
     restart: unless-stopped
