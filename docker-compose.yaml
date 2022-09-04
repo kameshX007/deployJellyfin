@@ -13,6 +13,6 @@ services:
     volumes:
       - /home/${DOCKER_USER}/docker/plex/config:/config
       - /home/${DOCKER_USER}/qbittorrentDownloads:/qbittorrentDownloads
-     ports:
+    ports:
       - 32400:32400
     restart: unless-stopped
