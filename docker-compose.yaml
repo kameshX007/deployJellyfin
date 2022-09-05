@@ -9,7 +9,10 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - /home/${DOCKER_USER}/docker/jellyfin/config:/config
-      - /home/${DOCKER_USER}/downloads:/data/downloads
+      - /home/${DOCKER_USER}/downloads/movies:/data/downloads/movies
+      - /home/${DOCKER_USER}/downloads/shows:/data/downloads/shows
+      - /home/${DOCKER_USER}/downloads/music:/data/downloads/music
+      - /home/${DOCKER_USER}/downloads/audioBooks:/data/downloads/audioBooks
     ports:
       - 8096:8096
     restart: unless-stopped
