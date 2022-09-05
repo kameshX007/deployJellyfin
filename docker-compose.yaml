@@ -1,18 +1,15 @@
----
 version: "2.1"
 services:
-  plex:
-    image: lscr.io/linuxserver/plex:latest
-    container_name: plex
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
     environment:
       - PUID=1001
       - PGID=1001
-      - VERSION=docker
       - TZ=Asia/Kolkata
-      - PLEX_CLAIM= ${PLEX_CLAIM}
     volumes:
-      - /home/${DOCKER_USER}/docker/plex/config:/config
-      - /home/${DOCKER_USER}/qbittorrentDownloads:/qbittorrentDownloads
+      - /home/${DOCKER_USER}/docker/jellyfin/config:/config
+      - /home/${DOCKER_USER}/downloads:/data/downloads
     ports:
-      - 32400:32400
+      - 8096:8096
     restart: unless-stopped
