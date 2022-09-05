@@ -7,8 +7,6 @@ services:
       - PUID=1001
       - PGID=1001
       - TZ=Asia/Kolkata
-    group_add:
-      - 109
     volumes:
       - /home/${DOCKER_USER}/docker/jellyfin/config:/config
       - /home/${DOCKER_USER}/downloads/movies:/data/downloads/movies
@@ -17,7 +15,4 @@ services:
       - /home/${DOCKER_USER}/downloads/audioBooks:/data/downloads/audioBooks
     ports:
       - 8096:8096
-    devices:
-      - /dev/dri/renderD128:/dev/dri/renderD128
-      - /dev/dri/card0:/dev/dri/card0
     restart: unless-stopped
