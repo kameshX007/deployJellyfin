@@ -7,6 +7,8 @@ services:
       - PUID=1001
       - PGID=1001
       - TZ=Asia/Kolkata
+    group_add:
+      - 109
     volumes:
       - /home/${DOCKER_USER}/docker/jellyfin/config:/config
       - /home/${DOCKER_USER}/downloads/movies:/data/downloads/movies
