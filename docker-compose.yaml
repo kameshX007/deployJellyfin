@@ -15,4 +15,6 @@ services:
       - /home/${DOCKER_USER}/downloads/audioBooks:/data/downloads/audioBooks
     ports:
       - 8096:8096
+    networks:
+      - tunnel
     restart: unless-stopped
